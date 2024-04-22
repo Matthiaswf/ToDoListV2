@@ -1,0 +1,23 @@
+{
+  "name": "todolistv2",
+  "version": "1.0.0",
+  "description": "My To Do List",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matthiaswf/ToDoListV2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matthiaswf/ToDoListV2/issues"
+  },
+  "homepage": "https://github.com/Matthiaswf/ToDoListV2#readme",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
