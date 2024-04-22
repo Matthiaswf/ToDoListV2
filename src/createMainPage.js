@@ -4,14 +4,7 @@ function createMainPage() {
 }
 //Creates and attaches the Header
 function createHeader() {
-  //Create DOM Element
-  const mainContainer = document.querySelector(".mainContainer");
-  const headerContainer = document.createElement("div");
-  headerContainer.classList.add("headerContainer");
-  headerContainer.setAttribute("id", "headerContainer");
-  mainContainer.appendChild(headerContainer);
-
-  //Add Visual Elements
+  const headerContainer = document.querySelector(".headerContainer");
   const heading = document.createElement("h1");
   heading.classList.add("h1");
   heading.setAttribute("id", "h1");
@@ -19,4 +12,5 @@ function createHeader() {
   headerContainer.appendChild(heading);
 }
 
+function createProjectList() {}
 export { createMainPage };
