@@ -35,6 +35,13 @@ function createProjectList() {
     projectInfo.textContent = getProjectInfo(item);
     projectListContainer.appendChild(projectInfo);
 
+    //Display Project Button
+    const displayProjectButton = document.createElement("button");
+    displayProjectButton.classList.add("displayButton");
+    projectInfo.appendChild(displayProjectButton);
+    displayProjectButton.textContent = "Display";
+    displayProjectButton.addEventListener("click", () => {});
+
     //Delete Project Button
     let deleteProjectButton = document.createElement("button");
     deleteProjectButton.classList.add("deleteProjectButton");
