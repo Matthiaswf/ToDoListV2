@@ -38,4 +38,4 @@ const displayProjectForm = () => {
   projectListContainer.appendChild(form);
 };
 
-export default displayProjectForm;
+export { displayProjectForm };
