@@ -1,4 +1,5 @@
 import { projectStorage } from "./projectStorage";
+import { displayProjectForm } from "./displayProjectForm";
 
 //Creating the Root Homepage
 function createMainPage() {
@@ -39,7 +40,7 @@ function createProjectList() {
   createProjectButton.setAttribute("id", "createProjectButton");
   createProjectButton.textContent = "Create a new Project";
   projectListContainer.appendChild(createProjectButton);
-  createProjectButton.addEventListener(() => {
+  createProjectButton.addEventListener("click", () => {
     displayProjectForm();
   });
 }
