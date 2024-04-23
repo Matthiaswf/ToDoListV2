@@ -1,5 +1,7 @@
 import { projectStorage } from "./projectStorage";
 import { displayProjectForm } from "./displayProjectForm";
+import { clearPage } from "./utility";
+import { pageLoad } from "./pageLoad";
 
 //Creating the Root Homepage
 function createMainPage() {
@@ -32,6 +34,19 @@ function createProjectList() {
     projectInfo.setAttribute("id", "project");
     projectInfo.textContent = getProjectInfo(item);
     projectListContainer.appendChild(projectInfo);
+
+    //Delete Project Button
+    let deleteProjectButton = document.createElement("button");
+    deleteProjectButton.classList.add("deleteProjectButton");
+    projectInfo.appendChild(deleteProjectButton);
+    deleteProjectButton.textContent = "Delete";
+    deleteProjectButton.itemIndex = item.indexValue;
+    deleteProjectButton.addEventListener("click", (event) => {
+      projectStorage.splice(event.currentTarget.itemIndex, 1);
+      localStorage.setItem("projectStorage", JSON.stringify(projectStorage));
+      clearPage();
+      pageLoad();
+    });
   });
 
   //Create Project Button

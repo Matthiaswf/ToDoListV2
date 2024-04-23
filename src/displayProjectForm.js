@@ -21,10 +21,10 @@ const displayProjectForm = () => {
   descriptionInput.setAttribute("name", "description");
   form.appendChild(descriptionInput);
 
+  //Create a new Project Button
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
   form.appendChild(submitButton);
-
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const fd = new FormData(form);
