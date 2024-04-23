@@ -34,6 +34,7 @@ function displayProject(projectTasks) {
     mainDisplayContainer.appendChild(taskInfo);
   });
 }
+//Function has to be outside of the class because it can not be passed through JSON
 function getTaskInfo(item) {
   return `${item.title},${item.description}`;
 }
