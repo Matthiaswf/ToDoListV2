@@ -1,5 +1,6 @@
 import { projectStorage } from "./projectStorage";
 import { pageLoad } from "./pageLoad";
+import { clearPage } from "./utility";
 
 const displayProjectForm = () => {
   const projectListContainer = document.querySelector(".projectListContainer");
@@ -32,6 +33,7 @@ const displayProjectForm = () => {
     obj.tasks = [];
     projectStorage.push(obj);
     localStorage.setItem("projectStorage", JSON.stringify(projectStorage));
+    clearPage();
     pageLoad();
   });
 

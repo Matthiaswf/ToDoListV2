@@ -9,4 +9,13 @@ function initializeStorage() {
   }
 }
 
-export { initializeStorage };
+function clearPage() {
+  const headerContainer = document.getElementById("headerContainer");
+  const projectListContainer = document.getElementById("projectListContainer");
+  const mainDisplayContianer = document.getElementById("mainDisplayContainer");
+  headerContainer.innerHTML = "";
+  projectListContainer.innerHTML = "";
+  mainDisplayContianer.innerHTML = "";
+}
+
+export { initializeStorage, clearPage };
