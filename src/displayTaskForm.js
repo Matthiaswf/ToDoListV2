@@ -1,13 +1,14 @@
 import { projectStorage } from "./projectStorage";
 import { pageLoad } from "./pageLoad";
 import { clearPage } from "./utility";
+import { displayProject } from "./displayProject";
 
-const displayProjectForm = () => {
-  const projectListContainer = document.querySelector(".projectListContainer");
+const displayTaskForm = (projectTasks) => {
+  const mainDisplayContainer = document.querySelector(".mainDisplayContainer");
 
   const form = document.createElement("form");
-  form.classList.add("createProjectForm");
-  form.setAttribute("id", "createProjectForm");
+  form.classList.add("createtaskForm");
+  form.setAttribute("id", "createtaskForm");
 
   const titleInput = document.createElement("input");
   titleInput.type = "text";
@@ -21,7 +22,7 @@ const displayProjectForm = () => {
   descriptionInput.setAttribute("name", "description");
   form.appendChild(descriptionInput);
 
-  //Create a new Project Button
+  //Create a new task Button
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
   form.appendChild(submitButton);
@@ -29,14 +30,14 @@ const displayProjectForm = () => {
     e.preventDefault();
     const fd = new FormData(form);
     const obj = Object.fromEntries(fd);
-    obj.tasks = [];
-    projectStorage.push(obj);
+    projectTasks.push(obj);
     localStorage.setItem("projectStorage", JSON.stringify(projectStorage));
     clearPage();
     pageLoad();
+    displayProject(projectTasks);
   });
 
-  projectListContainer.appendChild(form);
+  mainDisplayContainer.appendChild(form);
 };
 
-export { displayProjectForm };
+export { displayTaskForm };

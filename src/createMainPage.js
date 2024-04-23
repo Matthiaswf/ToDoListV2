@@ -2,6 +2,7 @@ import { projectStorage } from "./projectStorage";
 import { displayProjectForm } from "./displayProjectForm";
 import { clearPage } from "./utility";
 import { pageLoad } from "./pageLoad";
+import { displayProject } from "./displayProject";
 
 //Creating the Root Homepage
 function createMainPage() {
@@ -29,6 +30,9 @@ function createProjectList() {
 
   //Displaying Projects
   projectStorage.forEach((item) => {
+    //Needed for the display project function
+    const projectTasks = item.tasks;
+    //Dom Elements
     const projectInfo = document.createElement("div");
     projectInfo.classList.add("project");
     projectInfo.setAttribute("id", "project");
@@ -37,10 +41,13 @@ function createProjectList() {
 
     //Display Project Button
     const displayProjectButton = document.createElement("button");
-    displayProjectButton.classList.add("displayButton");
+    displayProjectButton.classList.add("displayProjectButton");
     projectInfo.appendChild(displayProjectButton);
     displayProjectButton.textContent = "Display";
-    displayProjectButton.addEventListener("click", () => {});
+    displayProjectButton.addEventListener("click", () => {
+      alert("displayProjectButton works");
+      displayProject(projectTasks);
+    });
 
     //Delete Project Button
     let deleteProjectButton = document.createElement("button");
@@ -70,4 +77,4 @@ function createProjectList() {
 function getProjectInfo(item) {
   return `${item.title},${item.description},${item.tasks.length}`;
 }
-export { createMainPage };
+export { createMainPage, createHeader, createProjectList };
