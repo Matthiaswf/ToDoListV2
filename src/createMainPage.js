@@ -45,7 +45,6 @@ function createProjectList() {
     projectInfo.appendChild(displayProjectButton);
     displayProjectButton.textContent = "Display";
     displayProjectButton.addEventListener("click", () => {
-      alert("displayProjectButton works");
       displayProject(projectTasks);
     });
 
