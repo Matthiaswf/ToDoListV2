@@ -53,8 +53,11 @@ const displayProjectForm = () => {
     clearPage();
     pageLoad();
   });
-
-  projectList.insertBefore(form, project);
+  if (document.getElementById("project")) {
+    projectList.insertBefore(form, project);
+  } else {
+    projectList.appendChild(form);
+  }
 };
 
 export { displayProjectForm };
