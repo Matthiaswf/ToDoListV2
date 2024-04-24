@@ -4,6 +4,7 @@ import { clearPage } from "./utility";
 
 const displayProjectForm = () => {
   const projectList = document.querySelector(".projectList");
+  const createProjectButton = document.querySelector(".createProjectButton");
 
   const form = document.createElement("form");
   form.classList.add("createProjectForm");
@@ -53,7 +54,7 @@ const displayProjectForm = () => {
     pageLoad();
   });
 
-  projectList.appendChild(form);
+  projectList.insertBefore(form, project);
 };
 
 export { displayProjectForm };
