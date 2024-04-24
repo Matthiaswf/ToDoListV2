@@ -5,7 +5,7 @@ import { displayTaskForm } from "./displayTaskForm";
 
 const mainDisplayContainer = document.querySelector(".mainDisplayContainer");
 
-function displayProject(projectTasks) {
+function displayProject(projectTasks, projectName) {
   clearPage();
   createHeader();
   createProjectList();
@@ -13,15 +13,13 @@ function displayProject(projectTasks) {
   mainDisplayContainer.classList.add("mainDisplayContainer");
   mainDisplayContainer.setAttribute("id", "mainDisplayContainer");
   mainDisplayContainer.appendChild(mainDisplayContent);
-  //Create Task Button
-  const createTaskButton = document.createElement("button");
-  createTaskButton.setAttribute("id", "createTaskButton");
-  createTaskButton.classList.add("createTaskButton");
-  createTaskButton.textContent = "Create a Task";
-  mainDisplayContainer.appendChild(createTaskButton);
-  createTaskButton.addEventListener("click", () => {
-    displayTaskForm(projectTasks);
-  });
+  //Project Heading
+  const projectHeading = document.createElement("h2");
+  projectHeading.classList.add("h2");
+  projectHeading.setAttribute("id", "h2");
+  projectHeading.textContent = projectName;
+  mainDisplayContainer.appendChild(projectHeading);
+
   projectTasks.forEach((item) => {
     item.indexValue = projectTasks.indexOf(item);
 
@@ -32,6 +30,16 @@ function displayProject(projectTasks) {
     taskInfo.textContent = getTaskInfo(item);
     mainDisplayContainer.appendChild(taskInfo);
     mainDisplayContainer.appendChild(taskInfo);
+  });
+
+  //Create Task Button
+  const createTaskButton = document.createElement("button");
+  createTaskButton.setAttribute("id", "createTaskButton");
+  createTaskButton.classList.add("createTaskButton");
+  createTaskButton.textContent = "Create a Task";
+  mainDisplayContainer.appendChild(createTaskButton);
+  createTaskButton.addEventListener("click", () => {
+    displayTaskForm(projectTasks, projectName);
   });
 }
 //Function has to be outside of the class because it can not be passed through JSON

@@ -3,7 +3,7 @@ import { pageLoad } from "./pageLoad";
 import { clearPage } from "./utility";
 import { displayProject } from "./displayProject";
 
-const displayTaskForm = (projectTasks) => {
+const displayTaskForm = (projectTasks, projectName) => {
   const mainDisplayContainer = document.querySelector(".mainDisplayContainer");
 
   const form = document.createElement("form");
@@ -34,7 +34,7 @@ const displayTaskForm = (projectTasks) => {
     localStorage.setItem("projectStorage", JSON.stringify(projectStorage));
     clearPage();
     pageLoad();
-    displayProject(projectTasks);
+    displayProject(projectTasks, projectName);
   });
 
   mainDisplayContainer.appendChild(form);

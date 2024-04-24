@@ -3,7 +3,7 @@ import { pageLoad } from "./pageLoad";
 import { clearPage } from "./utility";
 
 const displayProjectForm = () => {
-  const projectListContainer = document.querySelector(".projectListContainer");
+  const projectList = document.querySelector(".projectList");
 
   const form = document.createElement("form");
   form.classList.add("createProjectForm");
@@ -36,7 +36,7 @@ const displayProjectForm = () => {
     pageLoad();
   });
 
-  projectListContainer.appendChild(form);
+  projectList.appendChild(form);
 };
 
 export { displayProjectForm };

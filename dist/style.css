@@ -2,8 +2,50 @@ body {
   font-family: "A-OTF Shin Go Pro", sans-serif;
 }
 
+button {
+  font-family: "A-OTF Shin Go Pro", sans-serif;
+}
+
 .headerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.projectListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 90vh;
+  width: 20vw;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+h2 {
+  margin-top: 0px;
+}
+
+.mainDisplayContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90vh;
+  width: 60vw;
 }

@@ -21,23 +21,36 @@ function createHeader() {
 //Creates ProjectList section
 function createProjectList() {
   const projectListContainer = document.getElementById("projectListContainer");
+  const projectList = document.createElement("div");
+  projectList.classList.add("projectList");
+  projectList.setAttribute("id", "projectList");
+  projectListContainer.appendChild(projectList);
   //Heading
   const heading = document.createElement("h2");
   heading.setAttribute("id", "h2");
   heading.classList.add("h2");
   heading.textContent = "Current Projects";
-  projectListContainer.appendChild(heading);
-
+  projectList.appendChild(heading);
+  //Create Project Button
+  const createProjectButton = document.createElement("button");
+  createProjectButton.classList.add("createProjectButton");
+  createProjectButton.setAttribute("id", "createProjectButton");
+  createProjectButton.textContent = "Create a new Project";
+  projectList.appendChild(createProjectButton);
+  createProjectButton.addEventListener("click", () => {
+    displayProjectForm();
+  });
   //Displaying Projects
   projectStorage.forEach((item) => {
     //Needed for the display project function
     const projectTasks = item.tasks;
+    const projectName = item.title;
     //Dom Elements
     const projectInfo = document.createElement("div");
     projectInfo.classList.add("project");
     projectInfo.setAttribute("id", "project");
     projectInfo.textContent = getProjectInfo(item);
-    projectListContainer.appendChild(projectInfo);
+    projectList.appendChild(projectInfo);
 
     //Display Project Button
     const displayProjectButton = document.createElement("button");
@@ -45,31 +58,20 @@ function createProjectList() {
     projectInfo.appendChild(displayProjectButton);
     displayProjectButton.textContent = "Display";
     displayProjectButton.addEventListener("click", () => {
-      displayProject(projectTasks);
+      displayProject(projectTasks, projectName);
     });
-
     //Delete Project Button
     let deleteProjectButton = document.createElement("button");
     deleteProjectButton.classList.add("deleteProjectButton");
     projectInfo.appendChild(deleteProjectButton);
     deleteProjectButton.textContent = "Delete";
-    deleteProjectButton.itemIndex = item.indexValue;
+    deleteProjectButton.itemIndex = projectStorage.indexOf(item);
     deleteProjectButton.addEventListener("click", (event) => {
       projectStorage.splice(event.currentTarget.itemIndex, 1);
       localStorage.setItem("projectStorage", JSON.stringify(projectStorage));
       clearPage();
       pageLoad();
     });
-  });
-
-  //Create Project Button
-  const createProjectButton = document.createElement("button");
-  createProjectButton.classList.add("createProjectButton");
-  createProjectButton.setAttribute("id", "createProjectButton");
-  createProjectButton.textContent = "Create a new Project";
-  projectListContainer.appendChild(createProjectButton);
-  createProjectButton.addEventListener("click", () => {
-    displayProjectForm();
   });
 }
 //Function has to be outside of the class because it can not be passed through JSON
