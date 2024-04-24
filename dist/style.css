@@ -1,23 +1,35 @@
 body {
   font-family: "A-OTF Shin Go Pro", sans-serif;
+  height: 100%;
+  background: linear-gradient(0deg, #d5ced5, #ffffff 80%) no-repeat;
 }
 
 button {
   font-family: "A-OTF Shin Go Pro", sans-serif;
 }
 
+.mainContainer {
+  height: 100%;
+  width: 100%;
+}
+/* Header */
 .headerContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
 }
-
+h1 {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #59b792;
+}
+/* Hero */
 .heroContainer {
   display: flex;
   align-items: center;
   justify-content: left;
 }
+/* Project List */
 
 .projectListContainer {
   display: flex;
@@ -38,9 +50,106 @@ button {
 }
 
 h2 {
+  font-size: 20px;
   margin-top: 0px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #7cccbf;
+}
+.createProjectButton {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #d2e3f5 0%, #7cccbf 75%);
+}
+.createProjectButton:hover {
+  background-position: right center;
+}
+.createProjectButton:active {
+  top: 2px;
 }
 
+/* Project Form */
+.createProjectForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  /* text-shadow: 1px 2px 2px #59b792; */
+  color: black;
+  margin-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  gap: 10px;
+}
+h3 {
+  margin: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #59b792; */
+  color: black;
+}
+.createProjectForm button {
+  width: 100px;
+  margin-top: 15px;
+  font-size: 12px;
+  min-width: 100px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  background-size: 120% auto;
+  background-image: linear-gradient(315deg, #d2e3f5 0%, #7cccbf 75%);
+}
+.createProjectForm button:hover {
+  background-position: right center;
+}
+.createProjectForm button:active {
+  top: 2px;
+}
+.createProjectForm input {
+  margin-bottom: 5px;
+  text-align: center;
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  /* border-bottom: 2px solid black; */
+  border-image: radial-gradient(black, whitesmoke) 1;
+  border-width: 3px;
+  border-style: solid;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  -webkit-box-reflect: below 0.5px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.createProjectForm input:focus {
+  outline: none;
+  caret-color: grey;
+}
+.createProjectForm input:focus::placeholder {
+  color: transparent;
+}
+
+/* Main Display */
 .mainDisplayContainer {
   display: flex;
   flex-direction: column;

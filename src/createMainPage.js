@@ -35,7 +35,7 @@ function createProjectList() {
   const createProjectButton = document.createElement("button");
   createProjectButton.classList.add("createProjectButton");
   createProjectButton.setAttribute("id", "createProjectButton");
-  createProjectButton.textContent = "Create a new Project";
+  createProjectButton.textContent = "CREATE A NEW PROJECT";
   projectList.appendChild(createProjectButton);
   createProjectButton.addEventListener("click", () => {
     displayProjectForm();
